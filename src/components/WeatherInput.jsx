@@ -1,16 +1,16 @@
 // src/components/WeatherInput.jsx
 import React from 'react';
 
-function WeatherInput({ city, onCityChange, onGetWeather }) { // <<< THIS LINE IS KEY!
+function WeatherInput({ city, onCityChange, onGetWeather }) {
   return (
     <div>
       <input
         type="text"
         placeholder="Enter city name"
-        value={city} // <<< This needs the 'city' prop
-        onChange={onCityChange} // <<< This needs the 'onCityChange' prop
+        value={city} // Display the current state value from App.jsx
+        onChange={onCityChange} // Update state in App.jsx when input changes
       />
-      <button onClick={onGetWeather}>Get Weather</button> {/* <<< This needs the 'onGetWeather' prop */}
+      <button onClick={onGetWeather}>Get Weather</button> {/* Trigger API call in App.jsx */}
     </div>
   );
 }

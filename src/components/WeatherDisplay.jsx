@@ -10,22 +10,24 @@ function WeatherDisplay({ weather, loading, error }) {
     return <p style={{ color: 'red' }}>Error: {error}</p>;
   }
 
-  if (!weather) { // No weather data yet
-    return <p>Enter a city to get weather information.</p>;
+  if (!weather) {
+    return <p>Enter a city to get weather information!</p>;
   }
 
-  // If we have weather data, display it
+  // If we have weather data, let's display it
+  const { name, main, weather: weatherDetails } = weather;
+  const temperature = main.temp;
+  const description = weatherDetails[0].description;
+  const iconCode = weatherDetails[0].icon;
+  const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`; // Construct icon URL
+
   return (
     <div>
-      <h2>{weather.name}, {weather.sys.country}</h2>
-      <p>Temperature: {weather.main.temp}°C</p>
-      <p>Feels like: {weather.main.feels_like}°C</p>
-      <p>Condition: {weather.weather[0].description}</p>
-      {weather.weather[0].icon && (
-        <img
-          src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-          alt={weather.weather[0].description}
-        />
+      <h2>Weather in {name}</h2>
+      <p>Temperature: {temperature}°C</p>
+      <p>Description: {description}</p>
+      {iconCode && ( // Only show icon if iconCode exists
+        <img src={iconUrl} alt={description} />
       )}
     </div>
   );
