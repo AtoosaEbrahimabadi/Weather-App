@@ -1,30 +1,22 @@
 # 🌤️ Modern Weather App
 
-A sleek, responsive weather dashboard that provides real-time meteorological data. Built to demonstrate advanced React patterns, API integration, and modern CSS techniques.
+A sleek, responsive weather dashboard that provides real-time meteorological data. Built to demonstrate proficiency in React, API integration, and modern CSS layout techniques.
 
-[Live Demo Link] | [Report Bug]
+[Live Demo](https://symphonious-nasturtium-6d8fcb.netlify.app/) | [Report Bug](https://github.com/your-username/weather-app/issues)
 
 ## ✨ Key Features
 *   **Real-time Search:** Get instant weather data for any city worldwide.
-*   **Geolocation Support:** Automatically detects user location for local updates.
-*   **Dynamic UI:** The interface changes themes based on the current weather condition.
-*   **Extended Forecast:** 5-day weather outlook with high/low temperatures.
+*   **Detailed Metrics:** View temperature, "feels like" conditions, and weather descriptions.
 *   **Responsive Design:** Fully optimized for Mobile, Tablet, and Desktop.
+*   **Dynamic Assets:** Displays weather icons directly from the OpenWeather API.
 
 ## 🚀 Tech Stack
-*   **Frontend:** React 18, Vite
-*   **Styling:** Tailwind CSS / CSS Modules
+*   **Frontend:** React 18 (Vite)
+*   **Styling:** CSS3 (Flexbox & Grid)
 *   **API:** OpenWeatherMap API
-*   **Deployment:** Netlify / Vercel
+*   **Deployment:** Netlify
 
 ## 🛠️ Installation & Setup
-1. Clone the repository: `git clone https://github.com/your-username/weather-app.git`
-2. Install dependencies: `npm install`
-3. Create a `.env` file and add your API key:
-   `VITE_WEATHER_API_KEY=your_key_here`
-4. Start the dev server: `npm run dev`
-
-## 🧠 What I Learned
-*   Handling complex JSON responses from 3rd-party APIs.
-*   Implementing debounced search to optimize API calls.
-*   Managing application state with React Hooks (`useState`, `useEffect`).
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/weather-app.git
