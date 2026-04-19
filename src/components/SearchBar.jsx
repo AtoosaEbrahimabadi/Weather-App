@@ -1,7 +1,7 @@
-// src/components/WeatherInput.jsx
+// src/components/SearchBar.jsx
 import React from 'react';
 
-function WeatherInput({ city, onCityChange, onGetWeather }) {
+function SearchBar({ city, onCityChange, onGetWeather }) {
   return (
     <div>
       <input
@@ -15,4 +15,4 @@ function WeatherInput({ city, onCityChange, onGetWeather }) {
   );
 }
 
-export default WeatherInput;
+export default SearchBar;

@@ -1,7 +1,8 @@
-// src/components/WeatherDisplay.jsx
+// src/components/WeatherCard.jsx
 import React from 'react';
+import { motion } from 'framer-motion';
 
-function WeatherDisplay({ weather, loading, error }) {
+function WeatherCard({ weather, loading, error, units }) {
   // Helper function to convert string to title case
   const toTitleCase = (str) => {
     return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
@@ -25,17 +26,23 @@ function WeatherDisplay({ weather, loading, error }) {
   const description = toTitleCase(weatherDetails[0].description); // Format description to title case
   const iconCode = weatherDetails[0].icon;
   const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`; // Construct icon URL
+  const unitSymbol = units === 'metric' ? '°C' : '°F'; // Determine unit symbol
 
   return (
-    <div className="weather-card">
+    <motion.div
+      className="weather-card"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <h2>Weather in {name}</h2>
-      <p>Temperature: {temperature}°C</p>
+      <p>Temperature: {temperature}{unitSymbol}</p>
       <p>Description: {description}</p>
       {iconCode && ( // Only show icon if iconCode exists
         <img src={iconUrl} alt={description} />
       )}
-    </div>
+    </motion.div>
   );
 }
 
-export default WeatherDisplay;
+export default WeatherCard;
