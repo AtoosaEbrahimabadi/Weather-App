@@ -1,35 +1,22 @@
-# Weather App
+# 🌤️ Modern Weather App
 
-A modern, responsive weather application built with React and Vite, fetching real-time weather data from the OpenWeatherMap API. This project demonstrates proficiency in React component-based architecture, state management with hooks, API integration, and deployment workflows.
+A sleek, responsive weather dashboard that provides real-time meteorological data. Built to demonstrate proficiency in React, API integration, and modern CSS layout techniques.
 
-## Live Demo
-Experience the app live: [Weather App on Netlify](https://symphonious-nasturtium-6d8fcb.netlify.app)
+[Live Demo](https://symphonious-nasturtium-6d8fcb.netlify.app/) | [Report Bug](https://github.com/your-username/weather-app/issues)
 
-# React + Vite
+## ✨ Key Features
+*   **Real-time Search:** Get instant weather data for any city worldwide.
+*   **Detailed Metrics:** View temperature, "feels like" conditions, and weather descriptions.
+*   **Responsive Design:** Fully optimized for Mobile, Tablet, and Desktop.
+*   **Dynamic Assets:** Displays weather icons directly from the OpenWeather API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Tech Stack
+*   **Frontend:** React 18 (Vite)
+*   **Styling:** CSS3 (Flexbox & Grid)
+*   **API:** OpenWeatherMap API
+*   **Deployment:** Netlify
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-## Technologies Used
-*   React
-*   Vite
-*   OpenWeatherMap API
-*   HTML, CSS, JavaScript
-
-## Features
-*   Search weather by city name
-*   Display current temperature, description
-*   Loading and error handling
-*   Default city weather on load
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Installation & Setup
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/weather-app.git
