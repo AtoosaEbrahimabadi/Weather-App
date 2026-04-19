@@ -1,35 +1,30 @@
-# Weather App
+# 🌤️ Modern Weather App
 
-A modern, responsive weather application built with React and Vite, fetching real-time weather data from the OpenWeatherMap API. This project demonstrates proficiency in React component-based architecture, state management with hooks, API integration, and deployment workflows.
+A sleek, responsive weather dashboard that provides real-time meteorological data. Built to demonstrate advanced React patterns, API integration, and modern CSS techniques.
 
-## Live Demo
-Experience the app live: [Weather App on Netlify](https://symphonious-nasturtium-6d8fcb.netlify.app)
+[Live Demo Link] | [Report Bug]
 
-# React + Vite
+## ✨ Key Features
+*   **Real-time Search:** Get instant weather data for any city worldwide.
+*   **Geolocation Support:** Automatically detects user location for local updates.
+*   **Dynamic UI:** The interface changes themes based on the current weather condition.
+*   **Extended Forecast:** 5-day weather outlook with high/low temperatures.
+*   **Responsive Design:** Fully optimized for Mobile, Tablet, and Desktop.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Tech Stack
+*   **Frontend:** React 18, Vite
+*   **Styling:** Tailwind CSS / CSS Modules
+*   **API:** OpenWeatherMap API
+*   **Deployment:** Netlify / Vercel
 
-Currently, two official plugins are available:
+## 🛠️ Installation & Setup
+1. Clone the repository: `git clone https://github.com/your-username/weather-app.git`
+2. Install dependencies: `npm install`
+3. Create a `.env` file and add your API key:
+   `VITE_WEATHER_API_KEY=your_key_here`
+4. Start the dev server: `npm run dev`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-## Technologies Used
-*   React
-*   Vite
-*   OpenWeatherMap API
-*   HTML, CSS, JavaScript
-
-## Features
-*   Search weather by city name
-*   Display current temperature, description
-*   Loading and error handling
-*   Default city weather on load
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 What I Learned
+*   Handling complex JSON responses from 3rd-party APIs.
+*   Implementing debounced search to optimize API calls.
+*   Managing application state with React Hooks (`useState`, `useEffect`).
