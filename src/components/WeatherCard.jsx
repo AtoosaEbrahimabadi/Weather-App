@@ -1,46 +1,75 @@
-// src/components/WeatherCard.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 
 function WeatherCard({ weather, loading, error, units }) {
-  // Helper function to convert string to title case
-  const toTitleCase = (str) => {
-    return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
-  };
+  if (loading) return <p className="status">Loading weather data...</p>;
+  if (error) return <p className="status error">{error}</p>;
+  if (!weather) return <p className="status">Search for a city to begin!</p>;
 
-  if (loading) {
-    return <p>Loading weather data...</p>;
-  }
+  const tempUnit = units === 'metric' ? '°C' : '°F';
 
-  if (error) {
-    return <p style={{ color: 'red' }}>Error: {error}</p>;
-  }
-
-  if (!weather) {
-    return <p>Enter a city to get weather information!</p>;
-  }
-
-  // If we have weather data, let's display it
-  const { name, main, weather: weatherDetails } = weather;
-  const temperature = Math.round(main.temp); // Round temperature to nearest integer
-  const description = toTitleCase(weatherDetails[0].description); // Format description to title case
-  const iconCode = weatherDetails[0].icon;
-  const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`; // Construct icon URL
-  const unitSymbol = units === 'metric' ? '°C' : '°F'; // Determine unit symbol
+  // --- NEW: Function to get a nicely formatted date ---
+  const date = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  });
 
   return (
-    <motion.div
+    <motion.div 
       className="weather-card"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      key={weather.name}
     >
-      <h2>Weather in {name}</h2>
-      <p>Temperature: {temperature}{unitSymbol}</p>
-      <p>Description: {description}</p>
-      {iconCode && ( // Only show icon if iconCode exists
-        <img src={iconUrl} alt={description} />
-      )}
+      {/* --- NEW: Display the Date --- */}
+      <p className="current-date">{date}</p>
+      
+      <h2 className="city-name">{weather.name}, {weather.sys.country}</h2>
+      
+      <div className="weather-main">
+        <img 
+          src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`} 
+          alt={weather.weather[0].description} 
+        />
+        <div className="temp-display">
+          <span className="current-temp">{Math.round(weather.main.temp)}{tempUnit}</span>
+          <p className="description">{weather.weather[0].description}</p>
+        </div>
+      </div>
+
+      <div className="weather-details">
+        <div className="detail-item">
+          <span>Feels Like</span>
+          <strong>{Math.round(weather.main.feels_like)}{tempUnit}</strong>
+        </div>
+        <div className="detail-item">
+          <span>Humidity</span>
+          <strong>{weather.main.humidity}%</strong>
+        </div>
+        <div className="detail-item">
+          <span>Wind</span>
+          <strong>{weather.wind.speed} {units === 'metric' ? 'm/s' : 'mph'}</strong>
+        </div>
+      </div>
+
+      {/* 5-Day Forecast Section */}
+      <div className="forecast-container">
+        {weather.daily && weather.daily.map((day, index) => (
+          <div key={index} className="forecast-item">
+            <p className="forecast-day">
+              {new Date(day.dt * 1000).toLocaleDateString('en-US', { weekday: 'short' })}
+            </p>
+            <img 
+              src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`} 
+              alt="forecast icon" 
+            />
+            <p className="forecast-temp">{Math.round(day.main.temp)}°</p>
+          </div>
+        ))}
+      </div>
+      
     </motion.div>
   );
 }

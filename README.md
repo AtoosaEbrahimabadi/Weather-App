@@ -112,32 +112,10 @@ This project is open source and available under the [MIT License](LICENSE).
 - Google Fonts for the Inter typeface
 - React and Vite communities for excellent documentation# 🌤️ Modern Weather App
 
-<<<<<<< Updated upstream
-A sleek, responsive weather dashboard that provides real-time meteorological data. Built to demonstrate proficiency in React, API integration, and modern CSS layout techniques.
-=======
 A modern, high-end weather application built with React and Vite, featuring glassmorphism design, dynamic backgrounds, smooth animations, and advanced functionality. This portfolio piece demonstrates expertise in React development, API integration, UI/UX design, and modern web technologies.
->>>>>>> Stashed changes
 
 [Live Demo](https://symphonious-nasturtium-6d8fcb.netlify.app/) | [Report Bug](https://github.com/your-username/weather-app/issues)
 
-<<<<<<< Updated upstream
-## ✨ Key Features
-*   **Real-time Search:** Get instant weather data for any city worldwide.
-*   **Detailed Metrics:** View temperature, "feels like" conditions, and weather descriptions.
-*   **Responsive Design:** Fully optimized for Mobile, Tablet, and Desktop.
-*   **Dynamic Assets:** Displays weather icons directly from the OpenWeather API.
-
-## 🚀 Tech Stack
-*   **Frontend:** React 18 (Vite)
-*   **Styling:** CSS3 (Flexbox & Grid)
-*   **API:** OpenWeatherMap API
-*   **Deployment:** Netlify
-
-## 🛠️ Installation & Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/weather-app.git
-=======
 ## Features
 
 ### Core Functionality
@@ -244,4 +222,32 @@ This project is open source and available under the [MIT License](LICENSE).
 - Framer Motion for the animation library
 - Google Fonts for the Inter typeface
 - React and Vite communities for excellent documentation
->>>>>>> Stashed changes
+
+# 📝 Project Update Report - [25th of April 2026]
+
+## 🎯 Progress Summary
+Today, I transformed the Weather App from a basic functional tool into a modern, professional-grade dashboard. The focus was on improving UI/UX, refining technical logic, and adding advanced features.
+
+## ✨ UI/UX Enhancements
+*   **Glassmorphism Card:** Implemented a "frosted glass" weather card using CSS backdrop-filters and semi-transparent layers.
+*   **Dynamic Backgrounds:** Added a logic-driven background system where the app theme (gradients) changes automatically based on the weather (Clear, Clouds, Rain, Snow, etc.).
+*   **Animations:** Integrated `framer-motion` to add smooth "slide-up" and "fade-in" transitions when weather data loads.
+*   **Advanced Typography:** Switched to the 'Inter' font family and implemented visual hierarchy with rounded temperature values and capitalized descriptions.
+
+## 🛠️ Technical Improvements
+*   **Component Architecture:** Refactored the monolithic `App.jsx` into modular components (`SearchBar` and `WeatherCard`) for better maintainability.
+*   **Parallel API Fetching:** Optimized the data flow by using `Promise.all` to fetch Current Weather and 5-Day Forecast data simultaneously.
+*   **Data Filtering:** Implemented a filter logic to extract 12:00 PM readings from the 3-hour interval OpenWeather API response to create a clean 5-day outlook.
+*   **UX Features:** 
+    *   Added **Enter key** support for the search bar.
+    *   Implemented **Geolocation API** for "Use My Location" functionality.
+    *   Added a **Unit Toggle** (Metric/Imperial) with instant data refreshing.
+
+## 🧠 Key Learning Outcomes
+*   Mastered **Flexbox and Grid** for complex centering and card layouts.
+*   Learned to manage **Conditional Rendering** and loading states in React.
+*   Understood how to handle multiple asynchronous requests in a single lifecycle.
+*   Gained experience with **Framer Motion** for declarative UI animations.
+
+---
+*Status: Feature-complete. Ready for deployment.*

@@ -1,16 +1,25 @@
-// src/components/SearchBar.jsx
 import React from 'react';
 
 function SearchBar({ city, onCityChange, onGetWeather }) {
+  // This function checks if the key pressed was "Enter"
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      onGetWeather();
+    }
+  };
+
   return (
-    <div>
+    <div className="search-container">
       <input
         type="text"
-        placeholder="Enter city name"
-        value={city} // Display the current state value from App.jsx
-        onChange={onCityChange} // Update state in App.jsx when input changes
+        placeholder="Enter city name..."
+        value={city}
+        onChange={onCityChange}
+        onKeyDown={handleKeyDown} /* <--- This listens for the Enter key */
       />
-      <button onClick={onGetWeather}>Get Weather</button> {/* Trigger API call in App.jsx */}
+      <button onClick={onGetWeather} className="search-btn">
+        Get Weather
+      </button>
     </div>
   );
 }
